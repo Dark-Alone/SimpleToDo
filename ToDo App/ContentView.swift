@@ -21,11 +21,11 @@ struct ContentView: View {
                             viewContext: managedObjectContext
                         )
                     }, label: {
-                        Text("+")
-                            .font(.system(size: 24))
-                            .bold()
-                            .frame(width: 40, height: 40)
-                            .background(Color(white: 0.3), in: Circle())
+                        Image(systemName: "plus")
+                            .font(.system(size: 25, weight: .medium))
+                            .foregroundStyle(.white)
+                            .frame(width: 60, height: 60)
+                            .background(Color.blue, in: Circle())
                             .padding()
                     })
                 }
