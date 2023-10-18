@@ -12,6 +12,14 @@ struct ToDoView: View {
     
     var body: some View {
         Text(todo.titleWrapped)
+            .swipeActions {
+                Button {
+                    
+                } label: {
+                    Text("Delete")
+                }
+                .tint(.red)
+            }
     }
 }
 
