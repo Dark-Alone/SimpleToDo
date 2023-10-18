@@ -24,4 +24,14 @@ extension ToDoItem {
     var titleWrapped: String {
         title ?? "Empty ToDo"
     }
+    
+    static var preview: ToDoItem = {
+        let persistence = PersistenceController(inMemory: true)
+        let todo = ToDoItem(context: persistence.viewContext)
+        
+        todo.title = "Sample todo"
+        todo.dateCreated = Date()
+        
+        return todo
+    }()
 }

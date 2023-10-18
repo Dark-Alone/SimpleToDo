@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F44BFA5B2ADFD6A7009BFC33 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44BFA5A2ADFD6A7009BFC33 /* ToDoList.swift */; };
+		F47808502AE05AA200D2F7B6 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F478084F2AE05AA200D2F7B6 /* ToDoView.swift */; };
 		F48D7A8E2ADF2FED00D091DA /* ToDo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D7A8D2ADF2FED00D091DA /* ToDo_AppApp.swift */; };
 		F48D7A902ADF2FED00D091DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48D7A8F2ADF2FED00D091DA /* ContentView.swift */; };
 		F48D7A922ADF2FEF00D091DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F48D7A912ADF2FEF00D091DA /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		F44BFA5A2ADFD6A7009BFC33 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
+		F478084F2AE05AA200D2F7B6 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		F48D7A8A2ADF2FED00D091DA /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F48D7A8D2ADF2FED00D091DA /* ToDo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_AppApp.swift; sourceTree = "<group>"; };
 		F48D7A8F2ADF2FED00D091DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				F48D7A8D2ADF2FED00D091DA /* ToDo_AppApp.swift */,
 				F48D7A8F2ADF2FED00D091DA /* ContentView.swift */,
 				F44BFA5A2ADFD6A7009BFC33 /* ToDoList.swift */,
+				F478084F2AE05AA200D2F7B6 /* ToDoView.swift */,
 				F48D7A912ADF2FEF00D091DA /* Assets.xcassets */,
 				F48D7A962ADF2FEF00D091DA /* Persistence.swift */,
 				F48D7A982ADF2FEF00D091DA /* ToDo_App.xcdatamodeld */,
@@ -224,6 +227,7 @@
 				F44BFA5B2ADFD6A7009BFC33 /* ToDoList.swift in Sources */,
 				F48D7A972ADF2FEF00D091DA /* Persistence.swift in Sources */,
 				F48D7A902ADF2FED00D091DA /* ContentView.swift in Sources */,
+				F47808502AE05AA200D2F7B6 /* ToDoView.swift in Sources */,
 				F48D7A8E2ADF2FED00D091DA /* ToDo_AppApp.swift in Sources */,
 				F48D7A9A2ADF2FEF00D091DA /* ToDo_App.xcdatamodeld in Sources */,
 			);

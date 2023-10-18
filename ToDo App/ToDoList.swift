@@ -17,7 +17,7 @@ struct ToDoList: View {
     var body: some View {
         List {
             ForEach(todos) { todo in
-                Text(todo.titleWrapped)
+                ToDoView(todo: todo)
             }
         }
     }
