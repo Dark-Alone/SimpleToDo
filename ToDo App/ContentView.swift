@@ -16,10 +16,10 @@ struct ContentView: View {
             ToDoList()
                 .overlay(alignment: .bottomTrailing) {
                     Button(action: {
-                        let todo = ToDoItem(context: managedObjectContext)
-                        todo.title = "new todo"
-                        todo.dateCreated = Date()
-                        todo.isCompleted = false
+                        let _ = ToDoItem(
+                            title: "new todo",
+                            viewContext: managedObjectContext
+                        )
                     }, label: {
                         Text("+")
                             .font(.system(size: 24))

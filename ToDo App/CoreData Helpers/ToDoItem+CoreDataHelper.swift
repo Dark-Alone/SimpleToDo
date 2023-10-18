@@ -6,8 +6,21 @@
 //
 
 import Foundation
+import CoreData
 
 extension ToDoItem {
+    convenience init(
+        title: String? = nil,
+        dateCreated: Date = Date(),
+        isCompleted: Bool = false,
+        viewContext: NSManagedObjectContext
+    ) {
+        self.init(context: viewContext)
+        self.title = title
+        self.dateCreated = dateCreated
+        self.isCompleted = isCompleted
+    }
+    
     var titleWrapped: String {
         title ?? "Empty ToDo"
     }
