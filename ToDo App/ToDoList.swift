@@ -11,7 +11,10 @@ struct ToDoList: View {
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         entity: ToDoItem.entity(),
-        sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: true), NSSortDescriptor(key: "isCompleted", ascending: true)],
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \ToDoItem.isCompleted, ascending: true),
+            NSSortDescriptor(keyPath: \ToDoItem.dateCreated, ascending: true)
+        ],
         animation: .default
     )
     var todos: FetchedResults<ToDoItem>

@@ -56,4 +56,12 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+    
+    func save() {
+        do {
+            try viewContext.save()
+        } catch {
+            
+        }
+    }
 }
