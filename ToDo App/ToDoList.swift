@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ToDoList: View {
+    @Environment(\.managedObjectContext) var moc
     @FetchRequest(
         entity: ToDoItem.entity(),
-        sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: true), NSSortDescriptor(key: "isCompleted", ascending: true)]
+        sortDescriptors: [NSSortDescriptor(key: "dateCreated", ascending: true), NSSortDescriptor(key: "isCompleted", ascending: true)],
+        animation: .default
     )
     var todos: FetchedResults<ToDoItem>
     
@@ -18,6 +20,14 @@ struct ToDoList: View {
         List {
             ForEach(todos) { todo in
                 ToDoView(todo: todo)
+                    .swipeActions {
+                        Button {
+                            moc.delete(todo)
+                        } label: {
+                            Text("Delete")
+                        }
+                        .tint(.red)
+                    }
             }
         }
     }

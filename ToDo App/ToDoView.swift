@@ -12,17 +12,12 @@ struct ToDoView: View {
     
     var body: some View {
         Text(todo.titleWrapped)
-            .swipeActions {
-                Button {
-                    
-                } label: {
-                    Text("Delete")
-                }
-                .tint(.red)
-            }
     }
 }
 
 #Preview {
-    ToDoView(todo: ToDoItem.preview)
+    List {
+        ToDoView(todo: ToDoItem.preview)
+            .environment(\.managedObjectContext, PersistenceController.preview.viewContext)
+    }
 }
