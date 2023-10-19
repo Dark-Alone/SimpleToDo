@@ -22,7 +22,7 @@ extension ToDoItem {
     }
     
     var titleWrapped: String {
-        title ?? "Empty ToDo"
+        (title ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     func completed() {

@@ -71,6 +71,9 @@ struct ToDoView: View {
                     }
                 }
             }
+        } else if todo.titleWrapped.isEmpty {
+            Text("Empty ToDo")
+                .foregroundStyle(.gray)
         } else {
             Text(todo.titleWrapped)
         }
