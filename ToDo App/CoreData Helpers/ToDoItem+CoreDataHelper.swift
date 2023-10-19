@@ -32,6 +32,13 @@ extension ToDoItem {
             dateCompleted = Date()
         }
         isCompleted.toggle()
+        
+        PersistenceController.shared.save()
+    }
+    
+    func delete() {
+        managedObjectContext?.delete(self)
+        PersistenceController.shared.save()
     }
     
     static var preview: ToDoItem = {

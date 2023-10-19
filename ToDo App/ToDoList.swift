@@ -26,7 +26,7 @@ struct ToDoList: View {
                 ToDoView(todo: todo)
                     .swipeActions {
                         Button {
-                            moc.delete(todo)
+                            todo.delete()
                         } label: {
                             Text("Delete")
                         }
