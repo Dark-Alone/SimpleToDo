@@ -37,8 +37,7 @@ struct ToDoView: View {
             .overlay {
                 if todo.isCompleted {
                     Image(systemName: "checkmark")
-                        .font(.body)
-                        .fontWeight(.medium)
+                        .font(.body.weight(.medium))
                         .foregroundStyle(.white)
                 }
             }
