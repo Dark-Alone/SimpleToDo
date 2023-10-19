@@ -63,7 +63,7 @@ struct ToDoView: View {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
                     
-                    Button("Done") {
+                    Button("Save") {
                         todoController.resetEditing()
                         isFocused = false
                     }
