@@ -21,5 +21,6 @@ class ToDoController: ObservableObject {
     
     func resetEditing() {
         editingID = nil
+        PersistenceController.shared.save()
     }
 }
