@@ -35,5 +35,15 @@ struct ToDoList: View {
             }
             .listRowBackground(Color.listBackground)
         }
+        .overlay(alignment: .center) {
+            if todos.isEmpty {
+                Text("Tap the '+' button to add a new ToDo")
+                    .foregroundStyle(.secondary)
+                    .padding()
+                    .multilineTextAlignment(.center)
+                    .offset(y: -20)
+            }
+        }
+        .animation(.default, value: todos.isEmpty)
     }
 }
