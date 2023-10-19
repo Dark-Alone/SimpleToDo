@@ -29,6 +29,7 @@ struct ContentView: View {
                             .padding()
                     })
                 }
+                .navigationTitle("Simple ToDo")
         }
     }
 }
