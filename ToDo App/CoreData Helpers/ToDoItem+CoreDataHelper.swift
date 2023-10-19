@@ -25,6 +25,15 @@ extension ToDoItem {
         title ?? "Empty ToDo"
     }
     
+    func completed() {
+        if isCompleted {
+            dateCompleted = nil
+        } else {
+            dateCompleted = Date()
+        }
+        isCompleted.toggle()
+    }
+    
     static var preview: ToDoItem = {
         let persistence = PersistenceController(inMemory: true)
         let todo = ToDoItem(context: persistence.viewContext)

@@ -23,8 +23,7 @@ struct ToDoView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.listBackground)
         .onTapGesture {
-            todo.isCompleted.toggle()
-            PersistenceController.shared.save()
+            todo.completed()
         }
     }
     

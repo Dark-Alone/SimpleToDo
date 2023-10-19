@@ -13,6 +13,7 @@ struct ToDoList: View {
         entity: ToDoItem.entity(),
         sortDescriptors: [
             NSSortDescriptor(keyPath: \ToDoItem.isCompleted, ascending: true),
+            NSSortDescriptor(keyPath: \ToDoItem.dateCompleted, ascending: false),
             NSSortDescriptor(keyPath: \ToDoItem.dateCreated, ascending: false)
         ],
         animation: .default
