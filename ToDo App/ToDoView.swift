@@ -25,6 +25,10 @@ struct ToDoView: View {
         .onTapGesture {
             todo.completed()
         }
+        .onLongPressGesture {
+            isFocused.toggle()
+            todoController.editingID = todo.id
+        }
     }
     
     var completionStatus: some View {
