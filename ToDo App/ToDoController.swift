@@ -13,7 +13,6 @@ class ToDoController: ObservableObject {
     
     func createTodo(moc: NSManagedObjectContext) {
         let item = ToDoItem(
-            title: "new todo",
             viewContext: moc
         )
         
