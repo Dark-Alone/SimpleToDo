@@ -32,6 +32,7 @@ struct ToDoList: View {
                         .tint(.red)
                     }
             }
+            .listRowBackground(Color.listBackground)
         }
     }
 }

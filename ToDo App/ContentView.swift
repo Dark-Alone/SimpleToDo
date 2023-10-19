@@ -9,17 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.managedObjectContext) var moc
+    
+    @StateObject var todoController = ToDoController()
     
     var body: some View {
         NavigationView {
             ToDoList()
                 .overlay(alignment: .bottomTrailing) {
                     Button(action: {
-                        let _ = ToDoItem(
-                            title: "new todo",
-                            viewContext: managedObjectContext
-                        )
+                        todoController.createTodo(moc: moc)
                     }, label: {
                         Image(systemName: "plus")
                             .font(.system(size: 25, weight: .medium))
@@ -30,6 +29,7 @@ struct ContentView: View {
                     })
                 }
                 .navigationTitle("Simple ToDo")
+                .environmentObject(todoController)
         }
     }
 }

@@ -8,19 +8,7 @@
 import XCTest
 @testable import ToDo_App
 
-final class ToDoItemTests: XCTestCase {
-    var persistenceController: PersistenceController!
-    
-    override func setUp() {
-        super.setUp()
-        persistenceController = PersistenceController(inMemory: true)
-    }
-    
-    override func tearDown() {
-        super.tearDown()
-        persistenceController = nil
-    }
-    
+final class ToDoItemTests: XCTestCaseWithFakePersistence {
     func test_convenienceInit() {
         let title = "Custom"
         let dateCreated = Date().addingTimeInterval(20 * 60)

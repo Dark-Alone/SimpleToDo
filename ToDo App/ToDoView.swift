@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ToDoView: View {
+    @EnvironmentObject var todoController: ToDoController
     @ObservedObject var todo: ToDoItem
+    
+    @FocusState private var isFocused: Bool
     
     var body: some View {
         HStack {
             completionStatus
             
-            Text(todo.titleWrapped)
+            textStatus
         }
         .frame(height: 35)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.background)
+        .background(.listBackground)
         .onTapGesture {
             todo.isCompleted.toggle()
             PersistenceController.shared.save()
@@ -27,7 +30,7 @@ struct ToDoView: View {
     
     var completionStatus: some View {
         RoundedRectangle(cornerRadius: 7)
-            .fill(todo.isCompleted ? Color(red: 0.3, green: 0.3, blue: 1) : .clear)
+            .fill(todo.isCompleted ? Color(red: 0.1, green: 0.1, blue: 1) : .clear)
             .overlay {
                 RoundedRectangle(cornerRadius: 7)
                     .stroke()
@@ -42,11 +45,32 @@ struct ToDoView: View {
             }
             .frame(width: 20, height: 20)
     }
-}
-
-#Preview {
-    List {
-        ToDoView(todo: ToDoItem.preview)
-            .environment(\.managedObjectContext, PersistenceController.preview.viewContext)
+    
+    @ViewBuilder
+    var textStatus: some View {
+        if todoController.editingID == todo.id {
+            TextField(text: $todo.title.toUnwrapped(defaultValue: "")) {
+                Text("Enter next todo")
+            }
+            .focused($isFocused)
+            .onAppear {
+                isFocused = true
+            }
+            .onSubmit {
+                todoController.resetEditing()
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    
+                    Button("Done") {
+                        todoController.resetEditing()
+                        isFocused = false
+                    }
+                }
+            }
+        } else {
+            Text(todo.titleWrapped)
+        }
     }
 }
