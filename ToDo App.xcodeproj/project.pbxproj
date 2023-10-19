@@ -96,13 +96,11 @@
 				F4DC205F2ADFCE8D0017A8B6 /* CoreData Helpers */,
 				F48D7A8D2ADF2FED00D091DA /* ToDo_AppApp.swift */,
 				F48D7A8F2ADF2FED00D091DA /* ContentView.swift */,
-				F47808512AE0AA0B00D2F7B6 /* ToDoController.swift */,
 				F44BFA5A2ADFD6A7009BFC33 /* ToDoList.swift */,
 				F478084F2AE05AA200D2F7B6 /* ToDoView.swift */,
 				F46324792AE1327F007E724F /* Binding+toUnwrapped.swift */,
+				F47808512AE0AA0B00D2F7B6 /* ToDoController.swift */,
 				F48D7A912ADF2FEF00D091DA /* Assets.xcassets */,
-				F48D7A962ADF2FEF00D091DA /* Persistence.swift */,
-				F48D7A982ADF2FEF00D091DA /* ToDo_App.xcdatamodeld */,
 				F48D7A932ADF2FEF00D091DA /* Preview Content */,
 			);
 			path = "ToDo App";
@@ -130,7 +128,9 @@
 		F4DC205F2ADFCE8D0017A8B6 /* CoreData Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F48D7A982ADF2FEF00D091DA /* ToDo_App.xcdatamodeld */,
 				F4DC20602ADFCEC60017A8B6 /* ToDoItem+CoreDataHelper.swift */,
+				F48D7A962ADF2FEF00D091DA /* Persistence.swift */,
 			);
 			path = "CoreData Helpers";
 			sourceTree = "<group>";
