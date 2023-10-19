@@ -35,7 +35,3 @@ struct ToDoList: View {
         }
     }
 }
-
-#Preview {
-    ToDoList()
-}
